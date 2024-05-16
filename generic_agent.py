@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import networkx as nx
 import random
-from model import World
+from generic_model import World
 
 from mesa import Model
 from mesa.agent import Agent

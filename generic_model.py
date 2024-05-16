@@ -7,7 +7,6 @@ import random
 from mesa import Model
 from mesa.agent import Agent
 from mesa.datacollection import DataCollector
-from visualization_functions import plot_network
 
 
 class World(mesa.Model):
@@ -159,9 +158,6 @@ class World(mesa.Model):
         # at given interval report on the state of the system
         if self.schedule.time % self.poling_interval == 0:
             self.datacollector.collect(self)
-            if self.plot:
-                plot_network(self)
-                plt.show()
             
         self.schedule.step()
         check_stability = self.check_stability
