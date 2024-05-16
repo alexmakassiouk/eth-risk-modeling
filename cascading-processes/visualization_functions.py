@@ -12,7 +12,7 @@ def plot_network(world, ax=None):
     )
     nodelist = list(net.nodes())
     raw_colors = [node.capacity-node.final_load if node.failed else node.capacity-node.load for node in world.schedule.agents]
-    colors = [c if c>=0 else -1 for c in raw_colors]
+    colors = [c if c>0 else -1 for c in raw_colors]
     cmap = plt.cm.RdYlBu
 
     norm = mcolors.Normalize(vmin=min(colors), vmax=max(colors))
