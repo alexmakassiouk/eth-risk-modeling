@@ -15,6 +15,7 @@ The cascading-processes folder contains the necessary files and scripts to simul
 ### Systemic Risk Notebook
 
 The systemic-risk.ipynb file is a Jupyter notebook that contains the implementation of systemic risk models. It is used to visualize and understand the systemic risks involved in the scenarios we are studying.
+The backend models used in this notebook are in model.py and agent.py as explained below
 
 ## Code Walkthrough
 
