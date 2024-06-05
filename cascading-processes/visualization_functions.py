@@ -25,6 +25,7 @@ def plot_network(world, title="", ax=None):
         cbar.set_label("$z_i$: Net fragility")
         ax.axis("off")
         ax.set_title(title)
+    plt.show()
 
 
 def __provide_missing_ax():
