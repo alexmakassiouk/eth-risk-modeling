@@ -32,6 +32,13 @@ class Node(Agent):
         self.running = True
 
     @property
+    def net_fragility(self):
+        if self.failed:
+            return self.capacity-self.final_load
+        else:
+            return self.capacity-self.load
+
+    @property
     def uid(self):
         """unique agent identifier, useful for matching agents to network nodes"""
         return self.unique_id

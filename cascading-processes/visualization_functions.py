@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import networkx as nx
 
-def plot_network(world, ax=None):
+def plot_network(world, title="", ax=None):
     """Plot the networkx graph for the given World object"""
     if ax is None:
         ax = __provide_missing_ax()
@@ -11,7 +11,7 @@ def plot_network(world, ax=None):
         net
     )
     nodelist = list(net.nodes())
-    raw_colors = [node.capacity-node.final_load if node.failed else node.capacity-node.load for node in world.schedule.agents]
+    raw_colors = [node.net_fragility for node in world.schedule.agents]
     colors = [c if c>0 else -1 for c in raw_colors]
     cmap = plt.cm.RdYlBu
 
@@ -24,6 +24,7 @@ def plot_network(world, ax=None):
         cbar = ax.figure.colorbar(scalar_map, ax=ax)
         cbar.set_label("$z_i$: Net fragility")
         ax.axis("off")
+        ax.set_title(title)
 
 
 def __provide_missing_ax():
