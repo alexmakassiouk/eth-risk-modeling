@@ -89,6 +89,19 @@ class CascadeNetwork(Model):
                     continue
                 self.network.add_edge(source, target)
 
+    def set_load(self, node_id: int, load: float):
+        node = [agent for agent in self.schedule._agents if agent.uid == node_id][0]
+        if node != None:
+            node.failed = False
+            node.load = load
+            node._next_load = load
+            node._initial_load = load
+            node.final_load = load
+            if load >= node.capacity:
+                self.failing_ids.add(node.uid)
+            else:
+                self.healthy_ids.add(node.uid)
+
     def _generate_uid(self):
         """generate a unique uid"""
         valid_id_found = False
