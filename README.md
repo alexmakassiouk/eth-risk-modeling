@@ -1,4 +1,6 @@
-# Project in Introduction to Risk Modeling and Management
+# Exploring systemic risk
+## An agent-based approach to cascading processes on networks
+
 
 This project is a part of the course "Introduction to Risk Modeling and Management" at ETH Zurich, D-MTEC. The project is developed and maintained by Alex Makassiouk, Viktor Rasmussen, and Alexander Hansson.
 
